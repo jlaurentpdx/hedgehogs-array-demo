@@ -1,8 +1,15 @@
 // import functions and grab DOM elements
+import { hedgehogs } from './hedgehogs.js';
 
-// initialize global state
+const div = document.getElementById('show-hedgehogs');
 
-// set event listeners 
-  // get user input
-  // use user input to update state 
-  // update DOM to reflect the new state
+for (let hedgehog of hedgehogs) {
+    const hedgeName = document.createElement('h1');
+    const hedgeColor = document.createElement('p');
+    
+    hedgeName.textContent = hedgehog.name;
+    hedgeColor.textContent = hedgehog.color;
+
+    div.appendChild(hedgeName);
+    div.appendChild(hedgeColor);
+}
